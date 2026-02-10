@@ -1,0 +1,18 @@
+# Secrets
+config.env
+.env
+*.key
+
+# OBS local state
+*.bak
+*.log
+
+# OS junk
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Editor
+.vscode/
+*.swp
+*~

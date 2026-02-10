@@ -1,0 +1,78 @@
+{
+  "name": "X Live — Dragonwilds",
+  "current_scene": "DRAGONWILDS",
+  "current_program_scene": "DRAGONWILDS",
+  "scene_order": [
+    { "name": "DRAGONWILDS" }
+  ],
+  "sources": [
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "name": "DRAGONWILDS",
+      "settings": {},
+      "mixers": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "enabled": true
+    },
+    {
+      "id": "game_capture",
+      "versioned_id": "game_capture",
+      "name": "Dragonwilds Game",
+      "settings": {
+        "capture_mode": "any_fullscreen",
+        "capture_audio": true,
+        "priority": 1,
+        "sli_compatibility": false
+      },
+      "mixers": 255,
+      "flags": 0,
+      "volume": 1.0,
+      "enabled": true
+    },
+    {
+      "id": "monitor_capture",
+      "versioned_id": "monitor_capture",
+      "name": "Desktop Blurred",
+      "settings": {
+        "monitor": 0,
+        "capture_cursor": false
+      },
+      "mixers": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "enabled": true,
+      "filters": [
+        {
+          "id": "streamfx-filter-blur",
+          "versioned_id": "streamfx-filter-blur",
+          "name": "Gaussian Blur",
+          "settings": {
+            "Filter.Blur.Type": "gaussian",
+            "Filter.Blur.Size": 24
+          },
+          "enabled": true
+        }
+      ]
+    }
+  ],
+  "groups": [],
+  "transitions": [
+    {
+      "id": "fade_transition",
+      "versioned_id": "fade_transition",
+      "name": "Fade",
+      "settings": {},
+      "duration": 300
+    }
+  ],
+  "transition_duration": 300,
+  "modules": {
+    "scripts-tool": [],
+    "output-timer": {
+      "autoStartEnabled": false,
+      "autoStopEnabled": false
+    }
+  }
+}
