@@ -22,7 +22,7 @@ No mic. No desktop noise. Just the game.
 ### 1. Clone & configure
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/x-obs-stream-kit.git
+git clone https://github.com/tacticalnoot/x-obs-stream-kit.git
 cd x-obs-stream-kit
 cp config.env.example config.env
 ```
