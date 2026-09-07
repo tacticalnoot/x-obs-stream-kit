@@ -1,0 +1,25 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  stream-kit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate OBS scene JSON
+        run: python -m json.tool obs-scene-collection.json >/dev/null
+      - name: Validate config template keys
+        run: |
+          grep -q '^STREAM_KEY=' config.env.example
+          grep -q '^RTMP_URL=' config.env.example
+          grep -q '^GAME_NAME=' config.env.example
+      - name: Verify secrets stay ignored
+        run: |
+          grep -Fxq 'config.env' .gitignore
+          grep -Fxq '.env' .gitignore
+          test ! -e config.env
+          test ! -e .env
